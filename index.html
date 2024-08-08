@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tech Blog</title>
+
+    <!-- Include the Tailwind CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!--Styling-->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #EEEEEE;
+            color: #201E43;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'menu main main main right right'
+                'menu footer footer footer footer footer';
+            gap: 20px;
+            padding: 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .grid-container > div {
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .item1 {
+            grid-area: header;
+            background-color: #201E43;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .item2 {
+            grid-area: menu;
+            background-color: #134B70;
+            color: white;
+        }
+        .item2 ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .item2 ul li {
+            margin-bottom: 20px;
+        }
+        .item2 ul li a {
+            color: #EEEEEE;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .item2 ul li a:hover {
+            color: #508C9B;
+        }
+        .item3 {
+            grid-area: main;
+            background-color: white;
+        }
+        .item3 h2 {
+            color: #134B70;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .item4 {
+            grid-area: right;
+            background-color: #508C9B;
+            color: white;
+        }
+        .item5 {
+            grid-area: footer;
+            text-align: center;
+            background-color: #201E43;
+            color: white;
+            font-size: 14px;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .flex-item {
+            flex: 1 1 calc(33.333% - 20px);
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .flex-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .flex-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .flex-item h3 {
+            color: #134B70;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .flex-item p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-areas:
+                    'header header header'
+                    'menu main main'
+                    'right right right'
+                    'footer footer footer';
+            }
+            .flex-item {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-areas:
+                    'header'
+                    'menu'
+                    'main'
+                    'right'
+                    'footer';
+            }
+            .flex-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container max-w-7xl mx-auto">
+        <div class="item1 p-6">My Tech Blog</div>
+        <div class="item2 p-6">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="item3 p-6">
+            <h2 class="text-3xl font-bold mb-6">Latest in Tech</h2>
+            <p class="mb-4 text-lg">Artificial Intelligence continues to reshape industries across the globe. From healthcare to finance, AI-driven solutions are optimizing processes and unlocking new possibilities. As we navigate this technological revolution, it's crucial to consider both the benefits and ethical implications of these advancements.</p>
+            <p class="text-lg">Meanwhile, the Internet of Things (IoT) is expanding its reach, connecting our world in ways previously unimaginable. Smart homes, wearable tech, and industrial IoT are just the beginning. The challenge now lies in ensuring the security and privacy of these interconnected systems.</p>
+            
+            <div class="flex-container">
+                <div class="flex-item">
+                    <img src="health.jpeg" alt="AI in Healthcare">
+                    <h3>AI in Healthcare</h3>
+                    <p>AI is revolutionizing healthcare with advanced diagnostics, personalized treatments, and predictive analytics. It enhances patient outcomes and operational efficiency.</p>
+                </div>
+                <div class="flex-item">
+                    <img src="home.jpg" alt="IoT and Smart Homes">
+                    <h3>IoT and Smart Homes</h3>
+                    <p>IoT is making homes smarter with connected devices that provide convenience, security, and energy efficiency. Explore the latest trends in home automation.</p>
+                </div>
+                <div class="flex-item">
+                    <img src="block.jpg" alt="Blockchain Technology">
+                    <h3>Blockchain Technology</h3>
+                    <p>Blockchain is transforming industries with secure, decentralized transactions. From finance to supply chain, discover the potential of this innovative technology.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item4 p-6">
+            <h3 class="text-2xl font-semibold mb-4">Quick Links</h3>
+            <ul class="list-disc list-inside">
+                <li>Top 10 AI Breakthroughs</li>
+                <li>The Future of Blockchain</li>
+                <li>5G: A New Era of Connectivity</li>
+                <li>Cybersecurity Best Practices</li>
+            </ul>
+        </div>
+        <div class="item5 p-4">© 2024 My Tech Blog. All rights reserved.</div>
+    </div>
+</body>
+</html>
